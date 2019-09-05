@@ -36,4 +36,4 @@ COPY php/timezone.ini /usr/local/etc/php/conf.d/timezone.ini
 COPY src/index.php /var/www/html/public/index.php
 COPY php/vars-pro.ini /usr/local/etc/php/conf.d/vars.ini
 
-CMD ["apache2-foreground"]
+RUN cp -f "/usr/local/etc/php/php.ini-production" /usr/local/etc/php/php.ini
