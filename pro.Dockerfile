@@ -1,12 +1,12 @@
 FROM php:7.3-apache
 
-LABEL maintainer="Daniel Fernando Lourusso <dflourusso@gmail.com.br>"
+LABEL maintainer="Daniel Fernando Lourusso <dflourusso@gmail.com>"
 
 ADD oracle/instantclient-basic-linux.x64-12.2.0.1.0.tar.gz /usr/local
 ADD oracle/instantclient-sdk-linux.x64-12.2.0.1.0.tar.gz /usr/local
 ADD oracle/instantclient-sqlplus-linux.x64-12.2.0.1.0.tar.gz /usr/local
 
-RUN apt-get update && apt-get -y install wget bsdtar libaio1 curl git zlib1g-dev libzip-dev \
+RUN apt-get update && apt-get -y install libzip-dev\
   && ln -s /usr/local/instantclient_12_2 /usr/local/instantclient \
   && ln -s /usr/local/instantclient/libclntsh.so.* /usr/local/instantclient/libclntsh.so \
   && ln -s /usr/local/instantclient/lib* /usr/lib \
@@ -23,9 +23,8 @@ RUN apt-get update && apt-get -y install wget bsdtar libaio1 curl git zlib1g-dev
   && apt-get purge -y --auto-remove \
   && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/* \
-  && mkdir -p /etc/apache2/ssl \
   && mkdir -p /var/www/html/public \
-  && a2enmod ssl headers rewrite
+  && a2enmod headers rewrite
 
 WORKDIR /var/www/html
 
