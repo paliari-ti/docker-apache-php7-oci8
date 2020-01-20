@@ -33,4 +33,4 @@ docker container run -p 80:80 -v $(pwd):/var/www/html -d paliari/apache-ssl-php7
 Author
 -------
 
--	[Daniel Fernando Louurusso](http://dflourusso.com.br)
+-	[Daniel Fernando Lourusso](http://dflourusso.com.br)
