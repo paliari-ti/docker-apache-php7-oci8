@@ -11,6 +11,7 @@ RUN apt-get update && apt-get -y install libzip-dev\
   && ln -s /usr/local/instantclient/libclntsh.so.* /usr/local/instantclient/libclntsh.so \
   && ln -s /usr/local/instantclient/lib* /usr/lib \
   && ln -s /usr/local/instantclient/sqlplus /usr/bin/sqlplus \
+  && chmod 755 -R /usr/local/instantclient \
   && docker-php-ext-configure oci8 --with-oci8=instantclient,/usr/local/instantclient \
   && docker-php-ext-install oci8 \
   && docker-php-ext-install pdo_mysql exif opcache \
