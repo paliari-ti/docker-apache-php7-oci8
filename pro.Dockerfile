@@ -1,4 +1,4 @@
-FROM php:7.3-apache
+FROM php:7.4-apache
 
 LABEL maintainer="Daniel Fernando Lourusso <dflourusso@gmail.com>"
 
@@ -6,7 +6,7 @@ ADD oracle/instantclient-basic-linux.x64-12.2.0.1.0.tar.gz /usr/local
 ADD oracle/instantclient-sdk-linux.x64-12.2.0.1.0.tar.gz /usr/local
 ADD oracle/instantclient-sqlplus-linux.x64-12.2.0.1.0.tar.gz /usr/local
 
-RUN apt-get update && apt-get -y install libzip-dev\
+RUN apt-get update && apt-get -y install libzip-dev \
   && ln -s /usr/local/instantclient_12_2 /usr/local/instantclient \
   && ln -s /usr/local/instantclient/libclntsh.so.* /usr/local/instantclient/libclntsh.so \
   && ln -s /usr/local/instantclient/lib* /usr/lib \
@@ -31,7 +31,6 @@ WORKDIR /var/www/html
 
 COPY apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY apache/charset.conf /etc/apache2/conf-available/charset.conf
-COPY php/opcache-recommended.ini /usr/local/etc/php/conf.d/opcache-recommended.ini
 COPY php/timezone.ini /usr/local/etc/php/conf.d/timezone.ini
 COPY src/index.php /var/www/html/public/index.php
 COPY php/vars-pro.ini /usr/local/etc/php/conf.d/vars.ini
