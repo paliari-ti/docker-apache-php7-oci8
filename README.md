@@ -6,6 +6,9 @@ Docker image with apache, PHP 7 and oci8
 ### Versioning
 | Docker Tag        | Apache Version | PHP Version | Debian Version |
 |-------------------|----------------|-------------|----------------|
+| 1.1.0-pro         | 2.4.38         | 7.4.10      | GNU/Linux 10   |
+| 1.1.0-dev         | 2.4.38         | 7.4.10      | GNU/Linux 10   |
+| 1.1.0-dev-xdebug  | 2.4.38         | 7.4.10      | GNU/Linux 10   |
 | 1.0.3-pro         | 2.4.38         | 7.3.13      | GNU/Linux 10   |
 | 1.0.3-dev         | 2.4.38         | 7.3.13      | GNU/Linux 10   |
 | 1.0.3-dev-xdebug  | 2.4.38         | 7.3.13      | GNU/Linux 10   |
