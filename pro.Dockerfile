@@ -17,7 +17,7 @@ RUN apt-get update && apt-get -y install libzip-dev \
   && docker-php-ext-install pdo_mysql exif opcache \
   && apt-get install -y libicu-dev libaio-dev libxml2-dev libjpeg-dev libpng-dev libfreetype6-dev \
   && docker-php-ext-install intl soap dom \
-  && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+  && docker-php-ext-configure gd --with-freetype --with-jpeg \
   && docker-php-ext-install gd \
   && docker-php-ext-install zip \
   && apt-get install -y imagemagick \
